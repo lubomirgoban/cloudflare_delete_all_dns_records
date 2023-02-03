@@ -35,7 +35,7 @@ class CFRemove:
         return response.json()['success']
 
     def delete_dns_records(self):
-        if self.check_token()['success'] == 'true':
+        if self.check_token()['success']:
             dns_records = self.get_dns_records()
             count_records = len(dns_records['result'])
             print(f"Count records - {count_records}")
@@ -59,3 +59,4 @@ zone_id = copy of zone id from dashboard page
 
 """
 
+CFRemove(<enter token>, <enter zone_id>).delete_dns_records()
